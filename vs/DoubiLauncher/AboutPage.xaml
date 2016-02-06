@@ -1,0 +1,45 @@
+﻿<Page x:Class="AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DoubiLauncher"
+      mc:Ignorable="d" Height="391" Width="707"
+      Title="AboutPage" ShowsNavigationUI="False" >
+    <Grid>
+
+        <Border BorderBrush="Black" VerticalAlignment="Top" BorderThickness="1" Height="{Binding Height,ElementName=head}"  Width="{Binding Width, ElementName=head}" Margin="31.216,46.829,575.784,0">
+            <Image x:Name="head" Source="head.png" HorizontalAlignment="Left" Height="73.861" VerticalAlignment="Top" Width="73.861" />
+        </Border>
+        <Label x:Name="label" Content="Lensual" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123.146,57.95,0,0" FontSize="32" Cursor="Hand" MouseDown="label1_MouseDown" >
+            <Label.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation From="Black" To="#FFEC7171" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation From="#FFEC7171" To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation From="#00EC7171" To="#FFEC7171"  Duration="0:0:0.2" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Label x:Name="label1" Content="http://lensual.dreamerstudio.net/blog" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123.146,95.45,0,0" MouseDown="label1_MouseDown" Cursor="Hand"/>
+        <Label x:Name="label2" Content="项目主页 http://www.dreamerstudio.net/doubilauncher" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169.905,186.688,0,0" MouseDown="label2_MouseDown" Cursor="Hand"/>
+        <Label x:Name="label3" Content="Github https://github.com/Lensual/DoubiLauncher" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169.905,216.928,0,0" MouseDown="label3_MouseDown" Cursor="Hand"/>
+    </Grid>
+    
+</Page>
