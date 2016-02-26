@@ -106,7 +106,7 @@
     <Compile Include="MainPage.xaml.vb">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Network.vb" />
+    <Compile Include="UpdateMdl.vb" />
     <Compile Include="SettingPage.xaml.vb">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -200,13 +200,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bk.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="head.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="BigGod_ICO_反色.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7za.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

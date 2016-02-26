@@ -16,21 +16,21 @@
                 <EventTrigger RoutedEvent="UIElement.MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="Black" To="#FFEC7171" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="Black" To="#FF039AE3" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="UIElement.MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="#FFEC7171" To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="#FF039AE3" To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="UIElement.MouseDown">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="#00EC7171" To="#FFEC7171"  Duration="0:0:0.2" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="#00039AE3" To="#FF039AE3"  Duration="0:0:0.2" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

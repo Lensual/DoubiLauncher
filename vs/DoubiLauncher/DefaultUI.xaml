@@ -6,7 +6,7 @@
 
     <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="#00EC7171"/>
+        <Setter Property="BorderBrush" Value="#00039AE3"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -25,21 +25,21 @@
                         <EventTrigger RoutedEvent="UIElement.MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation From="#00EC7171" To="#FFEC7171" Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
+                                    <ColorAnimation From="#00039AE3" To="#FF039AE3" Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="UIElement.MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation From="#FFEC7171" To="#00EC7171"  Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
+                                    <ColorAnimation From="#FF039AE3" To="#00039AE3"  Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="ButtonBase.Click">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation From="#00EC7171" To="#FFEC7171"  Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
+                                    <ColorAnimation From="#00039AE3" To="#FF039AE3"  Duration="0:0:0.3" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -52,7 +52,7 @@
     <Style x:Key="DefaultComboBoxStyle" TargetType="{x:Type ComboBox}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="Background" Value="Transparent"/>
-        <!--<Setter Property="BorderBrush" Value="#FF039AE3"/>-->
+        <Setter Property="BorderBrush" Value="#FF039AE3"/>
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>

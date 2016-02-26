@@ -1,0 +1,47 @@
+===============
+文档版本【0.1】
+===============
+【关于配置自动更新功能的说明】
+	【!!使用该功能注意!!】：
+		更新脚本在客户端启动的时候从服务器获取并执行
+		请注意服务器的安全 意图不善者修改自动更新脚本 可以通过自动更新脚本控制所有客户端
+		
+	【如何配置】：
+		1.在启动器目录建立doubicustom.cfg
+		2.设置updateUrl属性为服务器
+		3.修改服务器上的更新脚本
+		4.如果有需要可以用ClientVersion属性作为客户端版本的标识
+	
+	【该功能执行顺序】：
+		MainWindow_Loaded事件中为update函数创建委托
+		判断本地是否存在doubicustom.cfg
+			如果存在
+				从doubicustom.cfg中获取更新服务器的地址
+				从doubicustom.cfg中获取客户端版本号
+			如果不存在
+				使用http://update.dreamerstudio.net/update/DoubiLauncher/作为服务器更新地址
+				（该地址为DoubiLauncher启动器的官方更新地址，只会获取最新版启动器）
+		后台获取更新脚本
+		将结果交给runscript函数执行
+		
+	【关于doubicustom.cfg】：
+		属性设定规则：
+			以属性名开始，等号为赋值号，等号后面接值
+			如：PropertyName=Value
+		注意：
+			区分大小写
+			不可随意加空格
+			回车换行
+		正确例子：
+			ClientVersion=1.6.4一周目
+		错误例子：
+			没区分大小写 clientversion=1.6.4一周目
+			随意加空格 （空格）ClientVersion（空格）=（空格）1.6.4一周目（空格）
+			用分号结尾 ClientVersion=1.6.4一周目;
+		属性：
+			updateUrl：更新服务器的地址 （更改为自己的更新服务器地址 
+						如果目标是index.php则url结尾需要加左斜杠"/"
+			ClientVersion：客户端版本号 （自定义，用于更新时作为客户端版本标识
+		
+	【关于自动更新脚本】：
+		请看 自动更新脚本说明.txt

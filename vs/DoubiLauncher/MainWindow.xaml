@@ -18,7 +18,6 @@
     </Window.Triggers>
     <Grid>
         <!--Start Menu-->
-        <Image x:Name="bk_png" Source="bk.png" Stretch="Fill" HorizontalAlignment="Right" Width="209.877" Margin="0,41,0,0" Height="150.541" VerticalAlignment="Top"/>
         <Grid x:Name="Menu" Height="41" VerticalAlignment="Top" Background="White">
             <!--<Grid.Triggers>
                 <EventTrigger RoutedEvent="Label.MouseDown">
@@ -48,8 +47,8 @@
                 </Label.BorderBrush>-->
             </Label>
             <Label x:Name="Label_AboutPage" Content="关于" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,0,0,0" Width="100" Height="40" FontFamily="Microsoft YaHei" FontSize="20" BorderThickness="1,0" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseDown="Label_AboutPage_MouseDown"/>
-            <Rectangle x:Name="Menu_Decoration" HorizontalAlignment="Left" Height="4" Stroke="#FFEC7171" VerticalAlignment="Top" Width="100" Margin="10,37,0,0" Fill="#FFEC7171"/>
-            <Rectangle HorizontalAlignment="Left" Height="1" Stroke="#FFEC7171" VerticalAlignment="Top" Width="705" Margin="0,40,0,0" Fill="#FFEC7171"/>
+            <Rectangle x:Name="Menu_Decoration" HorizontalAlignment="Left" Height="4" Stroke="#FF039AE3" VerticalAlignment="Top" Width="100" Margin="10,37,0,0" Fill="#FF039AE3"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Stroke="#FF039AE3" VerticalAlignment="Top" Width="705" Margin="0,40,0,0" Fill="#FF039AE3"/>
         </Grid>
         <!--End Menu-->
         <Frame x:Name="Window" Source="MainPage.xaml" NavigationUIVisibility="Hidden" Margin="0,41,0,0" Navigating="Window_Navigating" />

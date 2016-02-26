@@ -15,21 +15,21 @@
                 <EventTrigger RoutedEvent="UIElement.MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="Black" To="#FFEC7171" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="Black" To="#FF039AE3" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="UIElement.MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="#FFEC7171" To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="#FF039AE3" To="Black" Duration="0:0:0.5" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="UIElement.MouseDown">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation From="#00EC7171" To="#FFEC7171"  Duration="0:0:0.2" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                            <ColorAnimation From="#00039AE3" To="#FF039AE3"  Duration="0:0:0.2" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -37,9 +37,9 @@
         </Label>
         <Label Content="启动器 新春首发特别版" SnapsToDevicePixels="False" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontFamily="Microsoft YaHei" Foreground="Black" Margin="208.56,10,0,0"/>
 
-        <Button x:Name="Button_Launch" Content="Launch" Margin="398.035,162.405,117.965,145.595" BorderThickness="2" Style="{DynamicResource DefaultButtonStyle}" FontSize="32" />
-        <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="590.871,324.165,0,0" BorderThickness="1" Style="{DynamicResource DefaultButtonStyle}" Height="43.24" Width="66.343" FontSize="21.333"  />
-        <ComboBox x:Name="GameList" BorderBrush="#FFEC7171" HorizontalAlignment="Left" VerticalAlignment="Top" Width="274" Margin="104.371,180.332,0,0" Height="49.24" FontSize="26.667" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Style="{DynamicResource DefaultComboBoxStyle}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" /> 
+        <Button x:Name="Button_Launch" Content="Launch" Margin="398.035,162.405,117.965,145.595" BorderThickness="2" Style="{DynamicResource DefaultButtonStyle}" FontSize="32" BorderBrush="#00039AE3" />
+        <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="590.871,324.165,0,0" BorderThickness="1" Style="{DynamicResource DefaultButtonStyle}" Height="43.24" Width="66.343" FontSize="21.333" BorderBrush="#00039AE3"  />
+        <ComboBox x:Name="GameList" BorderBrush="#FF039AE3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="274" Margin="104.371,180.332,0,0" Height="49.24" FontSize="26.667" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Style="{DynamicResource DefaultComboBoxStyle}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" /> 
     </Grid>
     <!--End MainPage-->
 </Page>

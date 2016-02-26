@@ -1,0 +1,35 @@
+===========
+【0.2.0.1】
+===========
+服务端DoubiUpdateServer分离项目至 http://github.com/Lensual/DoubiUpdateServer
+服务端修复请求下载时index.php 37行的$file_path变量名写错导致的bug
+
+支持更新游戏
+支持更新脚本
+新定制化特性--可以通过doubicustom.cfg文件修改客户端更新服务器的地址
+新定制化特性--启动器可以通过doubicustom.cfg文件获得客户端版本号
+支持由服务器根据客户端版本给出不同的更新脚本
+
+与更新服务器的通信协议升级（0.2）
+
+Network模块名称更改为UpdateMdl
+
+LaunchHelper类更改为LaunchHelper模块（不知一开始怎么想的居然用类（ˉ﹃ˉ））
+
+界面颜色修改 去掉灯笼
+
+
+【配置自动更新功能】
+	请看 配置自动更新说明.txt 和 自动更新脚本说明.txt
+
+===========
+【0.1.0.0】
+===========
+春节首发
+仅仅能启动
+通过搜索jar文件和相对路径调用java.exe启动游戏
+
+已知问题：
+    不支持读取JSON获得启动所需信息
+    必须手动选择是否使用FML
+    不支持更改java路径

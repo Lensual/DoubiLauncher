@@ -1,6 +1,6 @@
 ﻿
 '启动器类
-Public Class LaunchHelper
+Public Module LaunchHelper
     '查找JAR包
 
     '=======================================================
@@ -81,4 +81,4 @@ Public Class LaunchHelper
 
 
     End Sub
-End Class
+End Module

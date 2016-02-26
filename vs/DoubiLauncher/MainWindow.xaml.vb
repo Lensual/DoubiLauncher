@@ -21,8 +21,7 @@
 
 Imports System.Windows.Media.Animation
 Class MainWindow
-    Public Shared GamePath() As String
-    Public Shared GameName() As String
+#Region "动画效果"
     '窗口移动
     Private Sub MainWindow_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles Me.MouseDown
         If (e.LeftButton = MouseButtonState.Pressed) Then
@@ -71,13 +70,15 @@ Class MainWindow
         FirstNavigation = False
         AllowDirectNavigation = False
     End Sub
-
+#End Region
+    Public Shared GamePath() As String
+    Public Shared GameName() As String
     '委托检查更新
     Delegate Sub DelegateUpdate()
     Private Sub MainWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         On Error Resume Next
         '检查更新
-        Dim update As New DelegateUpdate(AddressOf Network.update)
+        Dim update As New DelegateUpdate(AddressOf UpdateMdl.update)
         update.BeginInvoke(Nothing, Nothing)
         '查找游戏
         GamePath = IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory & ".minecraft\versions", "*.jar", IO.SearchOption.AllDirectories)

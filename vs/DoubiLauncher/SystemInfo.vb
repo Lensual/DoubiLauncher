@@ -14,7 +14,7 @@ Module SystemInfo
     End Function
 
     Public Function IsWOW64() As Boolean
-        If Dir(Environ("windir") + "\SysWOW64") <> "" Then
+        If IO.Directory.Exists(Environ("windir") + "\SysWOW64") Then
             Return True
         Else
             Return False
