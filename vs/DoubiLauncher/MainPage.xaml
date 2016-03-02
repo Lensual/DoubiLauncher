@@ -35,7 +35,7 @@
                 </EventTrigger>
             </Label.Triggers>
         </Label>
-        <Label Content="启动器 新春首发特别版" SnapsToDevicePixels="False" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontFamily="Microsoft YaHei" Foreground="Black" Margin="208.56,10,0,0"/>
+        <Label Content="启动器" SnapsToDevicePixels="False" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontFamily="Microsoft YaHei" Foreground="Black" Margin="208.56,10,0,0"/>
 
         <Button x:Name="Button_Launch" Content="Launch" Margin="398.035,162.405,117.965,145.595" BorderThickness="2" Style="{DynamicResource DefaultButtonStyle}" FontSize="32" BorderBrush="#00039AE3" />
         <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="590.871,324.165,0,0" BorderThickness="1" Style="{DynamicResource DefaultButtonStyle}" Height="43.24" Width="66.343" FontSize="21.333" BorderBrush="#00039AE3"  />

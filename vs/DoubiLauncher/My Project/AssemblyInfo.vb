@@ -15,7 +15,7 @@ Imports System.Windows
 <Assembly: AssemblyDescription("逗比启动器 由逗比研发")>
 <Assembly: AssemblyCompany("DreamerStudio.NET")>
 <Assembly: AssemblyProduct("DoubiLauncher")>
-<Assembly: AssemblyCopyright("DreamerStudio Copyright ©  2015")>
+<Assembly: AssemblyCopyright("Copyright © 2015 DreamerStudio. All Rights Reserved.")>
 <Assembly: AssemblyTrademark("")> 
 <Assembly: ComVisible(false)>
 
@@ -55,5 +55,5 @@ Imports System.Windows
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.2.1.0")>
-<Assembly: AssemblyFileVersion("0.0.0.0")>
+<Assembly: AssemblyVersion("0.3.2.0")>
+<Assembly: AssemblyFileVersion("0.3.2.0")>

@@ -40,6 +40,10 @@
         <Label x:Name="label1" Content="http://lensual.dreamerstudio.net/blog" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123.146,95.45,0,0" MouseDown="label1_MouseDown" Cursor="Hand"/>
         <Label x:Name="label2" Content="项目主页 http://www.dreamerstudio.net/doubilauncher" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169.905,186.688,0,0" MouseDown="label2_MouseDown" Cursor="Hand"/>
         <Label x:Name="label3" Content="Github https://github.com/Lensual/DoubiLauncher" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169.905,216.928,0,0" MouseDown="label3_MouseDown" Cursor="Hand"/>
+        <Label x:Name="label4" Content="求会WPF的帮忙设计界面（╯ＱＡＱ）╯╧╧" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.716" Width="234.807" Margin="10,324.964,0,0"/>
+        <Label x:Name="label5" Content="求会VB.NET的合作撸码（╯ＱＡＱ）╯╧╧" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29.858" Width="234.807" Margin="10,350.68,0,0"/>
+        <Label x:Name="label6" Content="Doubi启动器官方服务器 群号 370619976 (点我复制)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306.966,335.964,0,0" FontSize="16"/>
+
     </Grid>
-    
+
 </Page>

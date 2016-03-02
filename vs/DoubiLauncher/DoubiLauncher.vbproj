@@ -85,6 +85,8 @@
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -103,9 +105,11 @@
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Effect.vb" />
+    <Compile Include="JSONSerizer.vb" />
     <Compile Include="MainPage.xaml.vb">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MCJsonStruct.vb" />
     <Compile Include="UpdateMdl.vb" />
     <Compile Include="SettingPage.xaml.vb">
       <DependentUpon>SettingPage.xaml</DependentUpon>
@@ -126,7 +130,7 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LauncherHelper.vb" />
+    <Compile Include="LaunchHelper.vb" />
     <Compile Include="MainWindow.xaml.vb">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -141,12 +145,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Import Include="System" />
     <Import Include="System.Linq" />
     <Import Include="System.Windows.Media.Imaging" />
     <Import Include="System.Windows.Navigation" />
     <Import Include="System.Xml.Linq" />
     <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Diagnostics" />

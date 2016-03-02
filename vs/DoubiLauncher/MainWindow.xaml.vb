@@ -71,20 +71,23 @@ Class MainWindow
         AllowDirectNavigation = False
     End Sub
 #End Region
-    Public Shared GamePath() As String
+    Public Shared GameJarPath() As String
     Public Shared GameName() As String
     '委托检查更新
     Delegate Sub DelegateUpdate()
     Private Sub MainWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
-        On Error Resume Next
         '检查更新
         Dim update As New DelegateUpdate(AddressOf UpdateMdl.update)
         update.BeginInvoke(Nothing, Nothing)
-        '查找游戏
-        GamePath = IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory & ".minecraft\versions", "*.jar", IO.SearchOption.AllDirectories)
-        ReDim GameName(GamePath.Length - 1)
-        For i = 0 To GamePath.Length - 1
-            GameName(i) = Split(GamePath(i), "\").Last
-        Next
+        Try
+            '查找游戏
+            GameJarPath = IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory & ".minecraft\versions", "*.jar", IO.SearchOption.AllDirectories)
+            ReDim GameName(GameJarPath.Length - 1)
+            For i = 0 To GameJarPath.Length - 1
+                GameName(i) = Split(GameJarPath(i), "\").Last
+            Next
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

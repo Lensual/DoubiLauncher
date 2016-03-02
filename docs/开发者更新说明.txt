@@ -1,5 +1,40 @@
+==========
+【0.3.2.0】
+==========
+修正自动更新脚本无法转义的问题
+
+删除MainPage中的"春节首发特别版"
+
+修改UpdateMdl.runscript函数的deleteme功能
+	删除行号158的Shell()方法
+	改用Process类
+	改后代码可与.net4.0兼容
+	防止cmd未执行完毕就跑出select语句 添加Shutdown方法
+
+支持读取JSON方式启动
+不支持读取JSON判断加载libraries
+删除设置项 "使用FML"
+
+修正大量无所谓的错误（╯－＿－）╯╧╧
+	修正所有文档中写错的版本号（0.2.0.1->0.2.1.0）
+	修正写错的文件名（LauncherHelper.vb->LaunchHelper.vb）
+	修正LaunchHelper.Launch的函数名和所有引用(Launcher->Launch)
+	下列函数遍历数组方式修改为For Each语句
+		LaunchHelper.FindJAR函数 行号18
+		MainPage.GameList_Loaded方法 行号39
+		
+	下列函数修改返回语句为Return
+		LaunchHelper.FindJAR函数 行号21 (FindJAR= -> Return)
+		LaunchHelper.MakeCP函数 行号25 （MakeCP= -> Return）
+
+	下列函数修改容错方式为try语句	
+		UpdateMdl.update方法
+		MainWindow.MainWindow_Loaded方法
+		MainPage.GameList.GameList_Loaded方法
+还有很多不写了。。（╯－＿－）╯╧╧
+
 ===========
-【0.2.0.1】
+【0.2.1.0】
 ===========
 服务端DoubiUpdateServer分离项目至 http://github.com/Lensual/DoubiUpdateServer
 服务端修复请求下载时index.php 37行的$file_path变量名写错导致的bug

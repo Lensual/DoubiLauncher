@@ -16,9 +16,6 @@
         <Label Content="MB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="302,95.5,0,0" Width="40.19" Height="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="Chk_CustomJavaPath" IsChecked="{Binding Source={x:Static local:MySettings.Default},Path=IsCustomJavaPath,UpdateSourceTrigger=PropertyChanged}" Content="自定义Java路径" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53.545,142.951,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
         <TextBox x:Name="Txt_CustomJavaPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Source={x:Static local:MySettings.Default}, Path=CustomJavaPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="247" Margin="163,139,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
-        <CheckBox x:Name="Chk_UseFML" IsChecked="{Binding Source={x:Static local:MySettings.Default},Path=UseFML,UpdateSourceTrigger=PropertyChanged}" Content="使用FML（加载MOD）" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53.705,184.953,0,0" />
-        
-        <Label Content="PS：如需加载mod请勾上使用FML  勾上后没有FML的原版MC无法启动  以后会使用读取JSON判断是否加载MOD" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,244.983,0,0" Height="25.766" Width="633.477"/>
         <Label Content="正版登陆功能暂未制作 暂时无法自定义Java路径  默认使用相对路径  请确认可以通过相对路径访问java" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53.705,275.749,0,0" Width="596.857"/>
 
     </Grid>

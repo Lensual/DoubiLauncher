@@ -5,33 +5,36 @@ Module UpdateMdl
     Dim ClientVersion As String '游戏客户端版本号
 #Region "更新"
     Public Sub update()
-        On Error Resume Next
-        '检查本地是否存在doubicustom.cfg
-        If IO.File.Exists(".\doubicustom.cfg") Then
-            Dim str_customcfg As String
-            str_customcfg = IO.File.ReadAllText(".\doubicustom.cfg")
-            '使用定制地址
-            Dim tmp() As String
-            tmp = Split(str_customcfg, "updateUrl=")
-            updateUrl = Split(tmp(1), vbCrLf)(0)
-            '取得游戏客户端版本号
-            tmp = Split(str_customcfg, "ClientVersion=")
-            ClientVersion = Split(tmp(1), vbCrLf)(0)
+        Try
+            '检查本地是否存在doubicustom.cfg
+            If IO.File.Exists(".\doubicustom.cfg") Then
+                Dim str_customcfg As String
+                str_customcfg = IO.File.ReadAllText(".\doubicustom.cfg")
+                '使用定制地址
+                Dim tmp() As String
+                tmp = Split(str_customcfg, "updateUrl=")
+                updateUrl = Split(tmp(1), vbCrLf)(0)
+                '取得游戏客户端版本号
+                tmp = Split(str_customcfg, "ClientVersion=")
+                ClientVersion = Split(tmp(1), vbCrLf)(0)
 
-        End If
+            End If
 
-        '向更新服务器发送本地信息 询问下一步操作
-        Dim response As String
-        response = cURL(updateUrl & "?Command=WhatShouldIdo" &
+            '向更新服务器发送本地信息 询问下一步操作
+            Dim response As String
+            response = cURL(updateUrl & "?Command=WhatShouldIdo" &
              "&Build=" & Reflection.Assembly.GetExecutingAssembly.GetName.Version.Build &
              "&ClientVersion=" & ClientVersion &
              "&exeName=" & My.Application.Info.AssemblyName & ".exe")
-        Dim result As String = runscript(response)
-        If Not IsNothing(result) Then
-            MsgBox(result, MsgBoxStyle.Exclamation)
-        End If
+            Dim result As String = runscript(response)
+            If Not IsNothing(result) Then
+                MsgBox(result, MsgBoxStyle.Exclamation)
+            End If
+        Catch ex As Exception
 
-        '==============0.2.0.1删除===================
+        End Try
+
+        '==============0.2.1.0删除===================
         ''获取最后版本
         'Dim LastestVersion As String = cURL(updateUrl & "?Command=GetLastestVersion&Version=Debug")
         'If IsNothing(LastestVersion) Then Exit Sub
@@ -65,12 +68,12 @@ Module UpdateMdl
             If Not tmp.Length = 1 Then '如果有参数
                 parameter = Split(tmp(1), ",") '分割参数
                 For Each p In parameter '转义
-                    Replace(p, "%0A", vbCrLf,,, CompareMethod.Text)
-                    Replace(p, "%25", "%",,, CompareMethod.Text)
-                    Replace(p, "%28", "(",,, CompareMethod.Text)
-                    Replace(p, "%29", ")",,, CompareMethod.Text)
-                    Replace(p, "%3B", ";",,, CompareMethod.Text)
-                    Replace(p, "%2C", ",",,, CompareMethod.Text)
+                    p = Replace(p, "%0A", vbCrLf,,, CompareMethod.Text)
+                    p = Replace(p, "%25", "%",,, CompareMethod.Text)
+                    p = Replace(p, "%28", "(",,, CompareMethod.Text)
+                    p = Replace(p, "%29", ")",,, CompareMethod.Text)
+                    p = Replace(p, "%3B", ";",,, CompareMethod.Text)
+                    p = Replace(p, "%2C", ",",,, CompareMethod.Text)
                 Next
             End If
             Try
@@ -155,7 +158,11 @@ Module UpdateMdl
                         End If
                     Case "deleteme"
                         'deleteme();
-                        Shell("cmd /c taskkill /F /PID " & Process.GetCurrentProcess.Id & " & choice /t 2 /d y /n >nul & del " & My.Application.Info.AssemblyName & ".exe", AppWinStyle.Hide)
+                        Dim p As New Process
+                        p.StartInfo.CreateNoWindow = True
+                        p.StartInfo.FileName = ("cmd /c taskkill /F /PID " & Process.GetCurrentProcess.Id & " & choice /t 2 /d y /n >nul & del " & My.Application.Info.AssemblyName & ".exe")
+                        p.Start()
+                        My.Application.Shutdown()
                     Case "end"
                         'end();
                         Exit For

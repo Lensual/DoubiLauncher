@@ -24,7 +24,11 @@
             Exit Sub
         End If
         Try
-            LaunchHelper.Launcher(LaunchHelper.MakeCP(AppDomain.CurrentDomain.BaseDirectory & ".minecraft\libraries", MainWindow.GamePath(GameList.SelectedIndex)), My.Settings.UserName, My.Settings.CustomXmx, My.Settings.CustomXms)
+            LaunchHelper.Launch(MainWindow.GameJarPath(GameList.SelectedIndex),
+                                AppDomain.CurrentDomain.BaseDirectory & ".minecraft\libraries",
+                                My.Settings.UserName,
+                                My.Settings.CustomXmx,
+                                My.Settings.CustomXms)
             Windows.Application.Current.Shutdown()
         Catch ex As Exception
             MsgBox("在" & Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName & "." & Reflection.MethodBase.GetCurrentMethod.Name & "发生了" & vbCrLf & ex.ToString)
@@ -35,12 +39,14 @@
 #End Region
 #Region "将游戏载入列表"
     Private Sub GameList_Loaded(sender As Object, e As RoutedEventArgs) Handles GameList.Loaded
-        On Error Resume Next
-        For i = 0 To MainWindow.GameName.Length - 1
-            GameList.Items.Add(MainWindow.GameName(i))
-        Next
-        GameList.SelectedIndex = 0
+        Try
+            For Each n In MainWindow.GameName
+                GameList.Items.Add(n)
+            Next
+            GameList.SelectedIndex = 0
+        Catch ex As Exception
 
+        End Try
     End Sub
 #End Region
 #Region "访问Doubi Launcher主页"
