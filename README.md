@@ -1,3 +1,5 @@
+#不打算再更新 改用CSharp重做
+---
 # DoubiLauncher
 一个使用VB.NET基于WPF框架编写的Minecraft启动器
 
